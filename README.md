@@ -84,22 +84,40 @@ heroku logs --tail
 CTRL + c
 
 heroku addons:create heroku-postgresql
+```
 
-- entrar no diretorio dos script para popular o DB do Heroku
+* entrar no diretorio dos script para popular o DB do Heroku
+```shell script
 docker run -it --rm --net=host -v $PWD:/tmp postgres /bin/bash
 
 psql -h <host do postgresql no heroku> -U <usuario do postgresql no heroku> <database do Heroku> -f /tmp/pais.sql
 psql -h <host do postgresql no heroku> -U <usuario do postgresql no heroku> <database do Heroku> -f /tmp/estado.sql
 psql -h <host do postgresql no heroku> -U <usuario do postgresql no heroku> <database do Heroku> -f /tmp/cidade.sql
+```
 
 -entrar no Postgresql do Heroku e adicionar as extensões:
+```shell script
 psql -h <host do postgresql no heroku> -U <usuario do postgresql no heroku> <database do Heroku>
 
 CREATE EXTENSION cube;
 
 CREATE EXTENSION earthdistance;
+```
 
-````
+* Minha API pode ser achada aqui:
+
+https://fierce-scrubland-28454.herokuapp.com/
+
+* endpoints:
+	* /countries
+	* /countries/1
+	* /countries?page=0&size=10&sort=id,asc
+	* /countries?page=0&size=10&sort=name,asc
+	* /states
+	* /cities
+	* /distances/by-cube?from=4929&to=5254
+	* /distances/by-points?from=4929&to=5254
+
 
 ## Spring Boot
 
