@@ -3,7 +3,7 @@
 
 # Cities API
 ## Construindo uma API Rest de consulta de cidades do Brasil do zero até a produção
-### Neste projeto tivemos o desafio de desenvolver uma API Rest de consulta de cidades do Brasil com dados comparativos. Conhecemos as boas práticas de Java e do Spring, populando o banco de dados Postgres dentro de um container Docker e criando um serviço para o cálculo de distância entre cidades.
+### Neste projeto tivemos o desafio de desenvolver uma API Rest de consulta de cidades do Brasil com dados comparativos. Conhecemos as boas práticas de Java e do Spring, populando o banco de dados Postgresql dentro de um container Docker e criando um serviço para o cálculo de distância entre cidades.
 
 ## Requirements
 
@@ -100,6 +100,7 @@ CREATE EXTENSION cube;
 CREATE EXTENSION earthdistance;
 
 ````
+
 ## Spring Boot
 
 * [https://start.spring.io/](https://start.spring.io/)
