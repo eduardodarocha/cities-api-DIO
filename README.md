@@ -74,6 +74,32 @@ select earth_distance(
 ) as distance;
 ```
 
+## Deploy Heroku
+```shell script
+heroku create
+
+git push heroku main
+
+heroku logs --tail
+CTRL + c
+
+heroku addons:create heroku-postgresql
+
+- entrar no diretorio dos script para popular o DB do Heroku
+docker run -it --rm --net=host -v $PWD:/tmp postgres /bin/bash
+
+psql -h <host do postgresql no heroku> -U <usuario do postgresql no heroku> <database do Heroku> -f /tmp/pais.sql
+psql -h <host do postgresql no heroku> -U <usuario do postgresql no heroku> <database do Heroku> -f /tmp/estado.sql
+psql -h <host do postgresql no heroku> -U <usuario do postgresql no heroku> <database do Heroku> -f /tmp/cidade.sql
+
+-entrar no Postgresql do Heroku e adicionar as extensões:
+psql -h <host do postgresql no heroku> -U <usuario do postgresql no heroku> <database do Heroku>
+
+CREATE EXTENSION cube;
+
+CREATE EXTENSION earthdistance;
+
+````
 ## Spring Boot
 
 * [https://start.spring.io/](https://start.spring.io/)
